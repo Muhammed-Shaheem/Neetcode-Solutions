@@ -9,15 +9,12 @@ public static class ContainsDuplicate
         int length = nums.Length;
         for (int i = 0; i < length; i++)
         {
-
-           bool contains = ints.Add(nums[i]);
+            bool contains = ints.Add(nums[i]);
 
             if (contains == false)
             {
                 return true;
             }
-
-          
         }
 
         return false;
