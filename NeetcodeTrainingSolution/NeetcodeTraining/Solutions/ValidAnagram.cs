@@ -12,22 +12,40 @@ public static class ValidAnagram
             return false;
         }
 
-        var sChar = s.ToCharArray();
-        var tChar = t.ToCharArray();
-        Array.Sort(sChar);
-        Array.Sort(tChar);
+        Dictionary<char, int> sValues = new();
+        Dictionary<char, int> tValues = new();
 
-        for (int i = 0; i < sLen; i++)
+        for (int i = 0; i < s.Length; i++)
         {
-            if ((sChar[i] == tChar[i]) == false)
+            sValues[s[i]] = sValues.GetValueOrDefault(s[i]) + 1;
+
+            tValues[t[i]] = tValues.GetValueOrDefault(t[i]) + 1;
+
+           
+        }
+
+        if (sValues.Count != tValues.Count)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < sValues.Count; i++)
+        {
+            if (tValues.ContainsKey(s[i]))
+            {
+                if ((sValues[s[i]] == tValues[s[i]]) == false)
+                {
+                    return false;
+                }
+            }
+            else
             {
                 return false;
             }
+            
+            
         }
 
         return true;
-
-
-
     }
 }
