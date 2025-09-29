@@ -4,10 +4,12 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string s = "carrace";
-        string t = "racecar";
+       var ints= TwoSumSolution.TwoSum(new int[] { 2, 3, 67, 32, 4 }, 36);
 
-        Console.WriteLine(ValidAnagram.IsAnagram(s, t));
+        foreach (var item in ints)
+        {
+            Console.WriteLine(item);
+        }
 
     }
 }
