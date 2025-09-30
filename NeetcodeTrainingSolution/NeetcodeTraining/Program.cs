@@ -4,12 +4,12 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-       var ints= TwoSumSolution.TwoSum(new int[] { 2, 3, 67, 32, 4 }, 36);
+        Dictionary<int, int> d = new();
 
-        foreach (var item in ints)
-        {
-            Console.WriteLine(item);
-        }
+        d.Add(5, 0);
+        d.Add(5, 1);
+
+        Console.WriteLine(d[5]);
 
     }
 }

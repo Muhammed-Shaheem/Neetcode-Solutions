@@ -2,17 +2,23 @@
 
 public class TwoSumSolution
 {
-    public static int[] TwoSum(int[] nums,int target)
+    public static int[] TwoSum(int[] nums, int target)
     {
-        for (int i = 0; i < nums.Length; i++)
-        {
-            for (int j = i+1; j < nums.Length; j++)
-            {
-                if (nums[i] + nums[j] == target)
-                {
+        Dictionary<int, int> keyValuePairs = new();
+        int length = nums.Length;
 
-                    return new int[] { i, j };
-                }   
+        for (int i = 0; i < length; i++)
+        {
+            keyValuePairs[nums[i]] = i;
+        }
+
+        for (int i = 0; i < length; i++)
+        {
+            int x = target - nums[i];
+            if (keyValuePairs.ContainsKey(x) && i != keyValuePairs[x])
+            {
+                
+                return new int[] { i, keyValuePairs[x] };
             }
         }
 
