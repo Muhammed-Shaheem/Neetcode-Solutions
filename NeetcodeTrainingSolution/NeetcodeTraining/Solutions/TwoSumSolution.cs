@@ -7,18 +7,19 @@ public class TwoSumSolution
         Dictionary<int, int> keyValuePairs = new();
         int length = nums.Length;
 
-        for (int i = 0; i < length; i++)
-        {
-            keyValuePairs[nums[i]] = i;
-        }
-
+    
         for (int i = 0; i < length; i++)
         {
             int x = target - nums[i];
+
             if (keyValuePairs.ContainsKey(x) && i != keyValuePairs[x])
             {
-                
-                return new int[] { i, keyValuePairs[x] };
+                   
+                return new int[] {keyValuePairs[x],i };
+            }
+            else
+            {
+                keyValuePairs[nums[i]] = i;
             }
         }
 

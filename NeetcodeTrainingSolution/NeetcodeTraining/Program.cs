@@ -1,15 +1,12 @@
 ﻿using NeetcodeTraining.Solutions;
+using System.Text;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Dictionary<int, int> d = new();
-
-        d.Add(5, 0);
-        d.Add(5, 1);
-
-        Console.WriteLine(d[5]);
+        string v = "code";
+        Console.WriteLine(ScoreOfAStringSolution.ScoreOfString(v));
 
     }
 }
