@@ -5,8 +5,13 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string v = "code";
-        Console.WriteLine(ScoreOfAStringSolution.ScoreOfString(v));
+        int[] arr = { 2, 4, 5, 3, 1, 2 };
+        var array = ReplaceElementSolution.ReplaceElements(arr);
+        foreach (var item in array)
+        {
+            Console.WriteLine(item);
+        }
+
 
     }
 }
