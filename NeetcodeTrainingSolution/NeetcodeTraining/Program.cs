@@ -5,12 +5,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int[] arr = { 2, 4, 5, 3, 1, 2 };
-        var array = ReplaceElementSolution.ReplaceElements1(arr);
-        foreach (var item in array)
-        {
-            Console.WriteLine(item);
-        }
+        Console.WriteLine(SubSequenceSolution.IsSubsequence("node", "neetcode")); ;
+
 
 
     }
